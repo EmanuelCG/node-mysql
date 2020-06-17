@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.css">
+    <title>News</title>
+</head>
+
+<body>
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="#" class="navbar-brand mx-auto">NEWS</a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mt-4 text-center">
+                <table class="table table-striped">
+                    <tr>
+                        <td>ID</td>
+                        <td>Title</td>
+                        <td>News</td>
+                    </tr>
+                    <% news.forEach( news => {%>
+                    <tr>
+                        <td><%= news.id_new %></td>
+                        <td><%= news.title %></td>
+                        <td><%= news.news %></td>
+                    </tr>
+                    <% }); %>
+                </table>
+            </div>
+            <div class="col-md-6 mt-4 card">
+                <form action="/news" method="post" class="card-body">
+                <h3 class="card-title">Add News</h3>
+                <div class="form-grup">
+                    <input type="text" name="title" class="form-control mt-4" placeholder="Title">
+                </div>
+                <div class="form-grup">
+                    <input type="text" name="news" class="form-control mt-4" placeholder="News">
+                </div>
+                <input type="submit" class="btn btn-primary mt-4">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
